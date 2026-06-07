@@ -369,28 +369,7 @@ function App() {
               marginBottom: '20px',
               border: '1px solid rgba(99, 102, 241, 0.12)',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                  <line x1="12" y1="18" x2="12.01" y2="18" />
-                </svg>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: '#4338ca', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Your Device Info</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', textAlign: 'left' }}>
-                {[
-                  { label: 'IP Address', value: ipInfo?.ip || '...' },
-                  { label: 'Device', value: deviceInfo.model ? `${deviceInfo.model} (${deviceInfo.deviceType})` : deviceInfo.deviceType },
-                  { label: 'OS', value: deviceInfo.os },
-                  { label: 'Browser', value: deviceInfo.browser },
-                  { label: 'Screen', value: `${deviceInfo.screen} @${deviceInfo.pixelRatio}x` },
-                  { label: 'Location', value: ipInfo?.city ? `${ipInfo.city}, ${ipInfo.country}` : '...' },
-                ].map((item, i) => (
-                  <div key={i} style={{ overflow: 'hidden' }}>
-                    <p style={{ fontSize: '10px', color: '#94a3b8', margin: '0 0 1px', fontWeight: 500 }}>{item.label}</p>
-                    <p style={{ fontSize: '12px', color: '#1e293b', margin: 0, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.value}</p>
-                  </div>
-                ))}
-              </div>
+
             </div>
 
             {/* Status-specific content */}
