@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow read and write for any file under the 'sessions' folder (development only)
+    match /sessions/{sessionId}/{allPaths=**} {
+      allow read, write: if true;
+    }
+    // Optionally, lock down other paths as needed
+    // match /{allPaths=**} {
+    //   allow read: if request.auth != null; // example production rule
+    // }
+  }
+}

@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /sessions/{sessionId} {
+      // Allow creating and updating session data from the client, but block reading or deleting
+      allow create, update: if true;
+      allow read, delete: if false;
+    }
+  }
+}
